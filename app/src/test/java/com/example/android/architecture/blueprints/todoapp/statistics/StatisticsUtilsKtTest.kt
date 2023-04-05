@@ -1,6 +1,8 @@
 package com.example.android.architecture.blueprints.todoapp.statistics
 
 import com.example.android.architecture.blueprints.todoapp.data.Task
+import org.hamcrest.MatcherAssert.assertThat
+import org.hamcrest.core.Is.`is`
 import org.junit.Assert.*
 import org.junit.Test
 
@@ -16,8 +18,8 @@ class StatisticsUtilsKtTest {
         val result = getActiveAndCompletedStats(tasks)
 
         // Check the result
-        assertEquals(0f, result.completedTasksPercent)
-        assertEquals(100f, result.activeTasksPercent)
+        assertThat(result.completedTasksPercent, `is`(0f))
+        assertThat(result.activeTasksPercent, `is`(100f))
     }
 
     @Test
